@@ -1,0 +1,156 @@
+:root {
+  font-size: 16px;
+  --item-blue-color: #0000ff;
+  --item-blue-color-shadow: #0000ff44;
+  --background-item-color: #cad0ed;
+  --item-yellow-color: #ffd11a;
+}
+
+body {
+  font-family: "heebo", sans-serif;
+  margin: 0;
+  background-color: white;
+}
+
+h2 {
+  text-transform: uppercase;
+  padding-bottom: 1.5em;
+  text-align: center;
+}
+
+.wrapper {
+  max-width: 1096px;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+.displayflex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.displayflex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  display: inline-block;
+  background-color: var(--item-blue-color);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  box-shadow: 1px 2px 4px 0 var(--item-blue-color-shadow);
+  font-weight: bold;
+}
+
+section {
+  padding: 2rem 0;
+}
+
+section:nth-child(odd) {
+  background-color: var(--background-item-color);
+}
+
+section:first-child {
+  background-color: #00000000;
+}
+
+/*  HOME */
+
+#home {
+  margin-top: 7rem;
+}
+
+#helloicon {
+  font-size: 2rem;
+}
+
+.hero-text h1 {
+  padding: 0.5rem 0;
+  font-size: 2rem;
+}
+
+.hero-text p {
+  padding: 0.5rem 0;
+}
+
+#contractDetails {
+  position: relative;
+}
+
+#contractDetails p:first-child {
+  padding-bottom: 0;
+}
+
+#ampersand {
+  display: block;
+  position: absolute;
+  bottom: 0.1em;
+  left: -2rem;
+  font-size: 2rem;
+  color: var(--item-blue-color);
+}
+
+.hero-img {
+  position: relative;
+  width: 50%;
+}
+
+.hero-img::after {
+  content: "";
+  display: block;
+  width: 200%;
+  height: 200%;
+  background-color: var(--background-item-color);
+  border-radius: 50px;
+  position: absolute;
+  bottom: 50%;
+  transform: rotate(-20deg);
+}
+
+.hero-img img {
+  bottom: 0;
+  display: block;
+  position: absolute;
+  z-index: 10;
+}
+
+.hero-text .button {
+  margin: 2em;
+}
+
+/*  ABOUT */
+
+#about-text {
+  text-align: center;
+}
+
+/*  SKILLS & CERTIFICATIONS */
+
+#technical-skills,
+#certifications-list,
+#project-list {
+  justify-content: center;
+  text-align: center;
+  gap: 3rem;
+}
+
+.projectItem {
+  position: relative;
+  overflow: hidden;
+  width: 30%;
+}
+
+.projectItem :not(img) {
+  position: absolute;
+}
+
+.projectItem img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*   */
