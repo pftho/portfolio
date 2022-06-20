@@ -372,10 +372,10 @@ export default function Index() {
                 more{" "}
               </p>
             </div>{" "}
-            <div id="project-list" className="displayflex-row">
+            <div id="gallery" className="displayflex-row">
               {projects.map((project) => {
                 return (
-                  <div className="projectItem" key={project.title}>
+                  <div className="galleryItem" key={project.title}>
                     <h3> {project.title} </h3>
                     <p>{project.for} </p>
                     <img src={`${project.imagesrc}`} alt="project exemple" />
@@ -401,30 +401,52 @@ export default function Index() {
               you would like me to apply for, please feel free to get in touch.
             </p>
             <form>
-              <label htmlFor="firstname">First name:</label>
-              <input type="text" id="firstname" name="firstname" required />
+              <div id="contact-name" className="displayflew-row">
+                <label htmlFor="fullname">Full Name*</label>
+                <input type="text" id="fullname" name="fullname" required />
+              </div>
 
-              <label htmlFor="lastname">Last name:</label>
-              <input type="text" id="lastname" name="lastname" required />
+              <div id="contact-info" className="displayflex-row">
+                <div id="emaildiv">
+                  <label htmlFor="email">Email*</label>
+                  <input type="email" id="email" name="email" required />
+                </div>
+                <div id="phonediv">
+                  <label htmlFor="phone">Phone</label>
+                  <input type="tel" id="phone" name="phone" />
+                </div>
+              </div>
 
-              <label htmlFor="email">Email:</label>
-              <input type="email" id="email" name="email" required />
+              <div id="contact-message" className="displayflex-column">
+                <div>
+                  <label htmlFor="request">I am getting in touch to*</label>
+                  <select
+                    data-form-type="request"
+                    id="request"
+                    defaultValue={""}
+                  >
+                    <option value=""> </option>
+                    <option value="profile">
+                      Get to know more about your profile
+                    </option>
+                    <option value="vacancy">
+                      {" "}
+                      Get in touch for a job vacancy
+                    </option>
+                    <option value="Other"> Other </option>
+                  </select>{" "}
+                </div>
 
-              <label htmlFor="phone">Phone:</label>
-              <input type="tel" id="phone" name="phone" />
-
-              <label htmlFor="request">I am getting in touch to:</label>
-              <select data-form-type="request" id="request" defaultValue={""}>
-                <option value=""> </option>
-                <option value="profile">
-                  Get to know more about your profile
-                </option>
-                <option value="vacancy"> Get in touch for a job vacancy</option>
-                <option value="Other"> Other </option>
-              </select>
-              <label htmlFor="message">Message:</label>
-              <input type="text" id="message" name="message" />
-              <input type="submit" value="Send your message" />
+                <div>
+                  <label htmlFor="message">Message*</label>
+                  <textarea id="message" name="message" />
+                  <input
+                    type="submit"
+                    className="button"
+                    value="Send your message"
+                  />
+                </div>
+              </div>
             </form>{" "}
           </div>
         </section>

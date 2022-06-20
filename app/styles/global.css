@@ -131,26 +131,58 @@ section:first-child {
 
 #technical-skills,
 #certifications-list,
-#project-list {
+#gallery {
   justify-content: center;
   text-align: center;
   gap: 3rem;
 }
 
-.projectItem {
-  position: relative;
-  overflow: hidden;
-  width: 30%;
+/*  CONTACT*/
+
+#contact p {
+  text-align: center;
 }
 
-.projectItem :not(img) {
-  position: absolute;
+label {
+  display: inline-block;
+  margin: 0.5rem 0;
 }
 
-.projectItem img {
+#phonediv,
+#emaildiv {
+  width: 50%;
+}
+
+input,
+#request {
+  padding: 0.5rem;
+  border: solid 1px black;
   width: 100%;
-  height: auto;
-  display: block;
 }
 
-/*   */
+#contact-info {
+  justify-content: flex-start;
+  gap: 3rem;
+}
+
+#contact-info,
+#contact-name,
+#contact-message {
+  padding-top: 2rem;
+}
+
+/* input[type="text"] {
+  width: 20rem;
+}
+
+input[type="email"],
+input[type="tel"] {
+  width: 15rem;
+} */
+
+textarea {
+  min-height: 8rem;
+  min-width: 100%;
+  padding: 0.5em;
+  border: solid 1px black;
+}
