@@ -189,7 +189,7 @@ export const loader = async () => {
           "https://github.com/pftho/JavaScript30/tree/master/02%20-%20JS%20and%20CSS%20Clock",
       },
       {
-        title: "Playing withh CSS Variables and JS",
+        title: "Playing with CSS Variables & JS",
         imagesrc: "_assets/photos/project-CSS-variables.png",
         for: "JavaScript30 - Wes Bos",
         githublink:
@@ -211,8 +211,8 @@ export default function Index() {
     <>
       <Header />
       <div>
-        <section id="home" className=" displayflex-row">
-          <div className="wrapper">
+        <section id="home">
+          <div className="wrapper displayflex-row">
             <div className="hero-text">
               <p id="helloicon"> 👋 </p>
               <h1>Hello and welcome </h1>
@@ -241,20 +241,22 @@ export default function Index() {
                 </p>
               </div>
 
-              <a className="button" href="#contact" target="_blank">
-                Contact me
-              </a>
-              <a className="button" href="resume_placeholder" target="_blank">
-                Download my resume
-              </a>
+              <div className="displayflex-row" id="hello-buttons">
+                <a className="button" href="#contact" target="_blank">
+                  Contact me
+                </a>
+                <a className="button" href="resume_placeholder" target="_blank">
+                  Download my resume
+                </a>
+              </div>
             </div>
             <div className="hero-img">
-              <img
-                src="_assets/photos/main-image.png"
-                width="150"
-                height="150"
-                alt="Pauline Thomas"
-              />
+              <div>
+                <img
+                  src="_assets/photos/main-image.jpeg"
+                  alt="Pauline Thomas"
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -277,44 +279,49 @@ export default function Index() {
                 apprenticeship program right after the bootcamp.
               </p>
             </div>
-
             <div>
-              {cvSections.map((cvSection) => {
-                return (
-                  <div key={cvSection.title}>
-                    <p>{cvSection.location}</p>
-                    <h3>
-                      {cvSection.title}{" "}
-                      {cvSection.link ? (
-                        <a
-                          href={`${cvSection.link}`}
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <ExternalLinkLogo />
-                        </a>
-                      ) : null}
-                    </h3>
-                    <p>{cvSection.type}</p>
-                    <p>{cvSection.date}</p>
-                    <p>{cvSection.description}</p>
-                  </div>
-                );
-              })}
-            </div>
+              <div id="CVtimeline" className="displayflex-row">
+                <div className="timeline">
+                  {cvSections.map((cvSection) => {
+                    return (
+                      <>
+                        <div className="timeline-card" key={cvSection.title}>
+                          <p>{cvSection.location}</p>
+                          <h3 className="CVtitle">
+                            {cvSection.title}{" "}
+                            {cvSection.link ? (
+                              <a
+                                href={`${cvSection.link}`}
+                                target="_blank"
+                                rel="noreferrer"
+                              >
+                                <ExternalLinkLogo />
+                              </a>
+                            ) : null}
+                          </h3>
+                          <p>{cvSection.type}</p>
+                          <p>{cvSection.date}</p>
+                          <p>{cvSection.description}</p>
+                        </div>
+                      </>
+                    );
+                  })}
+                </div>
+              </div>
 
-            <div>
-              <a href="Cvplaceholder" target="_blank" rel="noreferrer">
-                <CvDownload />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/paulinefarina/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <LinkedinLogo />
-              </a>
-            </div>
+              <div>
+                <a href="Cvplaceholder" target="_blank" rel="noreferrer">
+                  <CvDownload />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/paulinefarina/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <LinkedinLogo />
+                </a>
+              </div>
+            </div>{" "}
           </div>
         </section>
 
@@ -359,7 +366,7 @@ export default function Index() {
 
         <section id="projects">
           <div className="wrapper">
-            <div>
+            <div id="projects-intro">
               <h2> Projects</h2>
               <p>
                 {" "}
@@ -375,18 +382,31 @@ export default function Index() {
             <div id="gallery" className="displayflex-row">
               {projects.map((project) => {
                 return (
-                  <div className="galleryItem" key={project.title}>
-                    <h3> {project.title} </h3>
-                    <p>{project.for} </p>
-                    <img src={`${project.imagesrc}`} alt="project exemple" />
-                    <a
-                      href={`${project.githublink}`}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <ExternalLinkLogo />
-                    </a>
-                  </div>
+                  <>
+                    <div className="displayflex-column">
+                      <figure key={project.title}>
+                        <img
+                          src={`${project.imagesrc}`}
+                          alt="project exemple"
+                        />
+
+                        <figcaption className="project-icon">
+                          {" "}
+                          <a
+                            href={`${project.githublink}`}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <ExternalLinkLogo />
+                          </a>{" "}
+                        </figcaption>
+                        <figcaption className="project-info">
+                          <h3> {project.title} </h3>
+                          <p>{project.for} </p>
+                        </figcaption>
+                      </figure>
+                    </div>
+                  </>
                 );
               })}
             </div>{" "}
